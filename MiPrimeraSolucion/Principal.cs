@@ -84,6 +84,7 @@ namespace MiPrimeraSolucion
             Console.WriteLine("3. Potencia.");
             Console.WriteLine("4. Tangente.");
             Console.WriteLine("5. Raíz cuadrada.");
+            Console.WriteLine("6. Suma siempre positiva.");
             Console.WriteLine("0. Salir.");
             Console.WriteLine("--------------------");
             Console.WriteLine("Digite su opción: ");
