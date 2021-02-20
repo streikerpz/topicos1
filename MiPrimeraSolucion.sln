@@ -5,7 +5,9 @@ VisualStudioVersion = 16.0.30907.101
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MiPrimeraSolucion", "MiPrimeraSolucion\MiPrimeraSolucion.csproj", "{0FE39649-AE33-4D06-AD81-9D83C72B1BBC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Calculadora.BL", "Calculadora.BL\Calculadora.BL.csproj", "{5FD688AE-49CE-4DCF-96C2-C5E810BFBAF5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Calculadora.BL", "Calculadora.BL\Calculadora.BL.csproj", "{5FD688AE-49CE-4DCF-96C2-C5E810BFBAF5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Topicos.NorthWnd.Model", "Topicos.NorthWnd.Model\Topicos.NorthWnd.Model.csproj", "{9041EA14-D3FE-4CA0-8BC9-3021BBC49738}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{5FD688AE-49CE-4DCF-96C2-C5E810BFBAF5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5FD688AE-49CE-4DCF-96C2-C5E810BFBAF5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5FD688AE-49CE-4DCF-96C2-C5E810BFBAF5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9041EA14-D3FE-4CA0-8BC9-3021BBC49738}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9041EA14-D3FE-4CA0-8BC9-3021BBC49738}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9041EA14-D3FE-4CA0-8BC9-3021BBC49738}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9041EA14-D3FE-4CA0-8BC9-3021BBC49738}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
