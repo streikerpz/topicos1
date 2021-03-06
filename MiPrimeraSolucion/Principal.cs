@@ -28,6 +28,12 @@ namespace MiPrimeraSolucion
                     case 3:
                         Potencia();
                         break;
+                    case 7:
+                        QryPorId();
+                        break;
+                    case 9:
+                        QryPorNombreProveedor();
+                        break;
                     case 0:
                         Terminar();
                         break;
@@ -75,6 +81,80 @@ namespace MiPrimeraSolucion
             }
         }
 
+        private void ImprimirListaDeProductos(IList <Topicos.NorthWnd.Model.Models.Product> laListaDeProductos)
+        {
+            foreach (var item in laListaDeProductos)
+            {
+                ImprimirProducto(item);
+            }
+        }
+
+        private void ImprimirProducto (Topicos.NorthWnd.Model.Models.Product elProducto)
+        {
+            Console.WriteLine($"Id : {elProducto.ProductId}. Nombre : {elProducto.ProductName}. Precio unitario : {elProducto.UnitPrice}. Unidades desabastecidas: {elProducto.UnitsUnderStock}.");
+        }
+
+        private void QryPorId()
+        {
+            Console.WriteLine("Consulta de producto por Id.");
+            Console.WriteLine("--------------------");
+            Console.WriteLine("Digite el código de producto: ");
+            var x = ObtenerNumero();
+            if (x != null)
+            {
+                int a = 0;
+                try
+                {
+                    a = (int)x;
+                    var elServicio = new Topicos.NorthWnd.BL.Logica.Servicio.NWProduct();
+                    var elResultado = elServicio.QryPorId(a);
+                    if (elResultado != null)
+                    {
+                        ImprimirProducto(elResultado);
+                    }
+                    else
+                    {
+                        Console.WriteLine($"No se encontró el producto con id {a}. Por favor revise.");
+                    }
+
+                }
+                catch (Exception)
+                {
+                    Console.WriteLine("Ocurrió un error al convertir los argumentos a números. Por favor revise.");
+                }
+            }
+            else
+            {
+                Console.WriteLine("Ocurrió un error al convertir los argumentos a números. Por favor revise.");
+            }
+        }
+
+        private void QryPorNombreProveedor()
+        {
+            Console.WriteLine("Consulta de producto por nombre del proveedor.");
+            Console.WriteLine("--------------------");
+            Console.WriteLine("Digite el nombre del proveedor: ");
+            var x = ObtenerHilera();
+            if (x != null)
+            {
+                var elServicio = new Topicos.NorthWnd.BL.Logica.Servicio.NWProduct();
+                var elResultado = elServicio.QryPorNombreAproximado(x);
+                if (elResultado != null && elResultado.Count > 0)
+                {
+                    ImprimirListaDeProductos(elResultado);
+                }
+                else
+                {
+                    Console.WriteLine($"No se encontró el producto con nombre de proveedor {x}. Por favor revise.");
+                }
+
+            }
+            else
+            {
+                    Console.WriteLine("Ocurrió un error al obtener el nombre del proveedor. Por favor revise.");
+            }
+}
+
         private void MostrarMenuPrincipal()
         {
             Console.WriteLine("Opciones principales");
@@ -85,6 +165,11 @@ namespace MiPrimeraSolucion
             Console.WriteLine("4. Tangente.");
             Console.WriteLine("5. Raíz cuadrada.");
             Console.WriteLine("6. Suma siempre positiva.");
+            Console.WriteLine("--------------------");
+            Console.WriteLine("7. Consulta de producto por Id.");
+            Console.WriteLine("8. Consulta de productos por nombre aproximado.");
+            Console.WriteLine("9. Consulta de productos por nombre aproximado del proveedor.");
+            Console.WriteLine("--------------------");
             Console.WriteLine("0. Salir.");
             Console.WriteLine("--------------------");
             Console.WriteLine("Digite su opción: ");
@@ -95,6 +180,12 @@ namespace MiPrimeraSolucion
             string opcion = CapturarOpcion();
             int? resultado = ConvertirOpcionANumero(opcion);
             return resultado;
+        }
+
+        private string ObtenerHilera()
+        {
+            string opcion = CapturarOpcion();
+            return opcion;
         }
 
         private static int? ConvertirOpcionANumero(string opcion)

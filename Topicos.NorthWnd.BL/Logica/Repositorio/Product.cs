@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -21,7 +22,7 @@ namespace Topicos.NorthWnd.BL.Logica.Repositorio
 
         public Model.Models.Product QryPorId(int elIdDeProducto)
         {
-            var laConsulta = _elContexto.Products.Find(elIdDeProducto);
+            var laConsulta = _elContexto.Products.Include(p => p.Category).Include(p=> p.Supplier).Where(p=> p.ProductId == elIdDeProducto).ToList().FirstOrDefault();
             return laConsulta;
         }
 
@@ -29,6 +30,15 @@ namespace Topicos.NorthWnd.BL.Logica.Repositorio
         {
             // IQueryable
             var laConsulta = _elContexto.Products.Where(p => p.ProductName.Contains(elNombreDelProducto));
+            laConsulta = laConsulta.OrderByDescending(p => p.ProductName);
+            var elResultado = laConsulta.ToList();
+            return elResultado;
+        }
+
+        public IList<Model.Models.Product> QryPorNombreProveedorAproximado(string elNombreDelProveedor)
+        {
+            // IQueryable
+            var laConsulta = _elContexto.Products.Include(p => p.Category).Include(p => p.Supplier).Where(p => p.Supplier.ContactName.Contains(elNombreDelProveedor));
             laConsulta = laConsulta.OrderByDescending(p => p.ProductName);
             var elResultado = laConsulta.ToList();
             return elResultado;

@@ -7,6 +7,8 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Calculadora.BL\Calculadora.BL.csproj" />
+    <ProjectReference Include="..\Topicos.NorthWnd.BL\Topicos.NorthWnd.BL.csproj" />
+    <ProjectReference Include="..\Topicos.NorthWnd.Model\Topicos.NorthWnd.Model.csproj" />
   </ItemGroup>
 
 </Project>
