@@ -19,6 +19,13 @@ namespace Topicos.NorthWnd.BL.Logica.Servicio
         {
             _elContexto = elContexto;
         }
+        public IList<Model.Models.Product> QryAllProducts()
+        {
+            var laAccion = new Logica.Accion.Product(_elContexto);
+            var elResultado = laAccion.QryAllProducts();
+            return elResultado;
+        }
+
         public Product QryPorId(int elIdDeProducto)
         {
             var laAccion = new Logica.Accion.Product(_elContexto);

@@ -9,7 +9,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Calculadora.BL", "Calculado
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Topicos.NorthWnd.Model", "Topicos.NorthWnd.Model\Topicos.NorthWnd.Model.csproj", "{9041EA14-D3FE-4CA0-8BC9-3021BBC49738}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Topicos.NorthWnd.BL", "Topicos.NorthWnd.BL\Topicos.NorthWnd.BL.csproj", "{3D2A113B-F6DE-4039-839A-DAB46520F886}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Topicos.NorthWnd.BL", "Topicos.NorthWnd.BL\Topicos.NorthWnd.BL.csproj", "{3D2A113B-F6DE-4039-839A-DAB46520F886}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Products.API", "Products.API\Products.API.csproj", "{FC98D940-BA5C-47DA-B401-F18FDD24482B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{3D2A113B-F6DE-4039-839A-DAB46520F886}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3D2A113B-F6DE-4039-839A-DAB46520F886}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3D2A113B-F6DE-4039-839A-DAB46520F886}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FC98D940-BA5C-47DA-B401-F18FDD24482B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FC98D940-BA5C-47DA-B401-F18FDD24482B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FC98D940-BA5C-47DA-B401-F18FDD24482B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FC98D940-BA5C-47DA-B401-F18FDD24482B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

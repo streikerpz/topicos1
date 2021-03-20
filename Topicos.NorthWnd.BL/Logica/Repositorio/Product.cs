@@ -20,6 +20,13 @@ namespace Topicos.NorthWnd.BL.Logica.Repositorio
             _elContexto = elContexto;
         }
 
+        public IList<Model.Models.Product> QryAllProducts ()
+        {
+            var laConsulta = _elContexto.Products.ToList();
+            return laConsulta;
+        }
+
+
         public Model.Models.Product QryPorId(int elIdDeProducto)
         {
             var laConsulta = _elContexto.Products.Include(p => p.Category).Include(p=> p.Supplier).Where(p=> p.ProductId == elIdDeProducto).ToList().FirstOrDefault();

@@ -1,0 +1,13 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Topicos.NorthWnd.BL\Topicos.NorthWnd.BL.csproj" />
+    <ProjectReference Include="..\Topicos.NorthWnd.Model\Topicos.NorthWnd.Model.csproj" />
+  </ItemGroup>
+
+
+</Project>

@@ -14,6 +14,13 @@ namespace Topicos.NorthWnd.BL.Logica.Accion
 
         }
 
+        public IList<Model.Models.Product> QryAllProducts()
+        {
+            var elRepositorio = new Logica.Repositorio.Product(_elContexto);
+            var elResultado = elRepositorio.QryAllProducts();
+            return elResultado;
+        }
+
         public Product(NorthWindContext elContexto)
         {
             _elContexto = elContexto;

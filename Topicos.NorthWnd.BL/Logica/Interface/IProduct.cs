@@ -9,7 +9,9 @@ namespace Topicos.NorthWnd.BL.Logica.Interface
     {
         Product QryPorId(int elIdDeProducto);
 
-        IList <Product> QryPorNombreAproximado(string elNombreDelProducto);
+        IList<Model.Models.Product> QryAllProducts();
+
+        IList<Product> QryPorNombreAproximado(string elNombreDelProducto);
 
         IList<Product> QryPorRangoDePrecio(decimal limiteInferior, decimal limiteSuperior);
 
