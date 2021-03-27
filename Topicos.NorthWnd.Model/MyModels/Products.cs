@@ -1,11 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Text;
 
 namespace Topicos.NorthWnd.Model.Models
 {
     public partial class Product
     {
+        [NotMapped]
         public int UnitsUnderStock { 
             get {
                 var elResultado = 0;

@@ -1,0 +1,76 @@
+{
+	"info": {
+		"_postman_id": "c7117d47-cfb7-44d0-990c-6192d849ae96",
+		"name": "Mis consultas",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Queries de Productos",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": ""
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Qry de un producto",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5555/api/products/GetProduct?id=8888",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5555",
+					"path": [
+						"api",
+						"products",
+						"GetProduct"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "8888"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Insertar un producto",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"productName\": \"hello world\",\r\n    \"quantityPerUnit\": \"36 boxes\",\r\n    \"discontinued\": false\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5555/api/products",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5555",
+					"path": [
+						"api",
+						"products"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
