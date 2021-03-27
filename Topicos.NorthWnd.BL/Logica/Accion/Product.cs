@@ -33,6 +33,12 @@ namespace Topicos.NorthWnd.BL.Logica.Accion
             return elResultado;
         }
 
+        public int Add(Model.Models.Product elProducto)
+        {
+            var elRepositorio = new Logica.Repositorio.Product(_elContexto);
+            return elRepositorio.Add(elProducto);
+        }
+
         public IList<Model.Models.Product> QryPorNombreAproximado(string elNombreDelProducto)
         {
             var elRepositorio = new Logica.Repositorio.Product(_elContexto);

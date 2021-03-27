@@ -7,6 +7,8 @@ namespace Topicos.NorthWnd.BL.Logica.Interface
 {
     public interface IProduct
     {
+        int Add(Model.Models.Product elProducto);
+
         Product QryPorId(int elIdDeProducto);
 
         IList<Model.Models.Product> QryAllProducts();

@@ -42,6 +42,13 @@ namespace Topicos.NorthWnd.BL.Logica.Repositorio
             return elResultado;
         }
 
+        public int Add(Model.Models.Product elProducto)
+        {
+            _elContexto.Products.Add(elProducto);
+            _elContexto.SaveChanges();
+            return elProducto.ProductId;
+        }
+
         public IList<Model.Models.Product> QryPorNombreProveedorAproximado(string elNombreDelProveedor)
         {
             // IQueryable
