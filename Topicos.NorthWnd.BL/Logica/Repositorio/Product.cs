@@ -58,6 +58,30 @@ namespace Topicos.NorthWnd.BL.Logica.Repositorio
             return elResultado;
         }
 
+        public bool ActualizarTodoElProducto(int id, Model.Models.Product elProducto)
+        {
+            var elProductoEnBd = _elContexto.Products.Include(p => p.Category).Include(p => p.Supplier).Where(p => p.ProductId == id).ToList().FirstOrDefault();
+            if (elProductoEnBd != null)
+            {
+                elProductoEnBd.ProductName = elProducto.ProductName;
+                elProductoEnBd.SupplierId = elProducto.SupplierId;
+                elProductoEnBd.CategoryId = elProducto.CategoryId;
+                elProductoEnBd.QuantityPerUnit = elProducto.QuantityPerUnit;
+                elProductoEnBd.UnitPrice = elProducto.UnitPrice;
+                elProductoEnBd.UnitsInStock = elProducto.UnitsInStock;
+                elProductoEnBd.UnitsOnOrder = elProducto.UnitsOnOrder;
+                elProductoEnBd.ReorderLevel = elProducto.ReorderLevel;
+                elProductoEnBd.Discontinued = elProducto.Discontinued;
+                _elContexto.Products.Update(elProductoEnBd);
+                _elContexto.SaveChanges();
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
         public IList<Model.Models.Product> QryPorRangoDePrecio(decimal limiteInferior, decimal limiteSuperior)
         {
             // IQueryable

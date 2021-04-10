@@ -53,5 +53,11 @@ namespace Topicos.NorthWnd.BL.Logica.Accion
             return elResultado;
         }
 
+        public bool ActualizarTodoElProducto(int id, Model.Models.Product elProducto)
+        {
+            var elRepositorio = new Logica.Repositorio.Product(_elContexto);
+            var elResultado = elRepositorio.ActualizarTodoElProducto(id, elProducto);
+            return elResultado;
+        }
     }
 }

@@ -53,5 +53,12 @@ namespace Topicos.NorthWnd.BL.Logica.Servicio
             var elResultado = laAccion.QryPorRangoDePrecio(limiteInferior, limiteSuperior);
             return elResultado;
         }
+
+        public bool ActualizarTodoElProducto(int id, Product elProducto)
+        {
+            var laAccion = new Logica.Accion.Product(_elContexto);
+            var elResultado = laAccion.ActualizarTodoElProducto(id, elProducto);
+            return elResultado;
+        }
     }
 }

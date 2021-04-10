@@ -59,5 +59,24 @@ namespace Products.API.Controllers
                     id = elIdRecibido
                 }, elProductoParaInsertar);
         }
+
+        [HttpPut("{id}")]
+        public IActionResult PutProduct (int id, [FromBody]Topicos.NorthWnd.Model.Models.Product elProducto)
+        {
+            if (id == elProducto.ProductId)
+            {
+                var elServicio = new Topicos.NorthWnd.BL.Logica.Servicio.NWProduct();
+                var pudoActualizarElRegistro = elServicio.ActualizarTodoElProducto(id, elProducto);
+                if (pudoActualizarElRegistro)
+                    return NoContent();
+                else
+                    return NotFound();
+            }
+            else
+            {
+                return BadRequest();
+            }
+        }
+
     }
 }

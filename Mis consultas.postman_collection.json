@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "c7117d47-cfb7-44d0-990c-6192d849ae96",
+		"_postman_id": "15a9d26e-f46a-41f9-b193-ea7c96219579",
 		"name": "Mis consultas",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -11,7 +11,17 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": ""
+					"raw": "http://localhost:5555/api/products/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5555",
+					"path": [
+						"api",
+						"products",
+						""
+					]
 				}
 			},
 			"response": []
@@ -22,7 +32,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:5555/api/products/GetProduct?id=8888",
+					"raw": "http://localhost:5555/api/products/GetProduct?id=3",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -36,7 +46,7 @@
 					"query": [
 						{
 							"key": "id",
-							"value": "8888"
+							"value": "3"
 						}
 					]
 				}
@@ -45,6 +55,36 @@
 		},
 		{
 			"name": "Insertar un producto",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"productId\": 3,\r\n    \"productName\": \"NEW Aniseed Syrup\",\r\n    \"unitPrice\": 100.0000,\r\n    \"unitsInStock\": 13,\r\n    \"unitsOnOrder\": 70,\r\n    \"reorderLevel\": 25,\r\n    \"discontinued\": true,\r\n    \"supplierId\": 1,\r\n    \"categoryId\": 1,\r\n    \"QuantityPerUnit\":\"12 - 550 ml BOTTLES\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5555/api/products/3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5555",
+					"path": [
+						"api",
+						"products",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Actualizar TODO un producto",
 			"request": {
 				"method": "POST",
 				"header": [],
