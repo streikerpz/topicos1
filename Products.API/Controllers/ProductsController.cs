@@ -1,10 +1,9 @@
 ﻿using AutoMapper;
+using Microsoft.AspNetCore.JsonPatch;
 using Microsoft.AspNetCore.Mvc;
 using Products.API.ViewModels;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 //using System.Web.Http;
 
 namespace Products.API.Controllers
@@ -78,5 +77,34 @@ namespace Products.API.Controllers
             }
         }
 
+        [HttpPatch("{id}")]
+        public IActionResult PatchProduct(int id, [FromBody] JsonPatchDocument<ProductUpdate> parchesAlProducto)
+        {
+            var elServicio = new Topicos.NorthWnd.BL.Logica.Servicio.NWProduct();
+            var elResultadoRecibido = elServicio.QryPorId(id);
+            if (elResultadoRecibido != null)
+            {
+                //var elResultadoDevuelto = _mapper.Map<Products.API.ViewModels.ProductQry>(elResultadoRecibido);
+                return ActualizarProductoParcialmente (elResultadoRecibido, parchesAlProducto);
+            }
+            else
+            {
+                return NotFound();
+            }
+        }
+
+        private IActionResult ActualizarProductoParcialmente(Topicos.NorthWnd.Model.Models.Product elResultadoRecibido, JsonPatchDocument<ProductUpdate> parchesAlProducto)
+        {
+            var elProductoParaParchar = new ProductUpdate()
+            {
+                ProductId = elResultadoRecibido.ProductId,
+                ProductName = elResultadoRecibido.ProductName,
+                UnitPrice = elResultadoRecibido.UnitPrice,
+                Discontinued = elResultadoRecibido.Discontinued
+            };
+            parchesAlProducto.ApplyTo(elProductoParaParchar);
+
+            throw new NotImplementedException();
+        }
     }
 }
