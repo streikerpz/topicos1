@@ -1,0 +1,12 @@
+C:\Users\sergi\source\repos\2021-1-Topicos\Topicos.NorthWnd.Model\bin\Debug\netcoreapp3.1\Topicos.NorthWnd.Model.deps.json
+C:\Users\sergi\source\repos\2021-1-Topicos\Topicos.NorthWnd.Model\bin\Debug\netcoreapp3.1\Topicos.NorthWnd.Model.runtimeconfig.json
+C:\Users\sergi\source\repos\2021-1-Topicos\Topicos.NorthWnd.Model\bin\Debug\netcoreapp3.1\Topicos.NorthWnd.Model.runtimeconfig.dev.json
+C:\Users\sergi\source\repos\2021-1-Topicos\Topicos.NorthWnd.Model\bin\Debug\netcoreapp3.1\Topicos.NorthWnd.Model.dll
+C:\Users\sergi\source\repos\2021-1-Topicos\Topicos.NorthWnd.Model\bin\Debug\netcoreapp3.1\Topicos.NorthWnd.Model.pdb
+C:\Users\sergi\source\repos\2021-1-Topicos\Topicos.NorthWnd.Model\obj\Debug\netcoreapp3.1\Topicos.NorthWnd.Model.csprojAssemblyReference.cache
+C:\Users\sergi\source\repos\2021-1-Topicos\Topicos.NorthWnd.Model\obj\Debug\netcoreapp3.1\Topicos.NorthWnd.Model.AssemblyInfoInputs.cache
+C:\Users\sergi\source\repos\2021-1-Topicos\Topicos.NorthWnd.Model\obj\Debug\netcoreapp3.1\Topicos.NorthWnd.Model.AssemblyInfo.cs
+C:\Users\sergi\source\repos\2021-1-Topicos\Topicos.NorthWnd.Model\obj\Debug\netcoreapp3.1\Topicos.NorthWnd.Model.csproj.CoreCompileInputs.cache
+C:\Users\sergi\source\repos\2021-1-Topicos\Topicos.NorthWnd.Model\obj\Debug\netcoreapp3.1\Topicos.NorthWnd.Model.dll
+C:\Users\sergi\source\repos\2021-1-Topicos\Topicos.NorthWnd.Model\obj\Debug\netcoreapp3.1\Topicos.NorthWnd.Model.pdb
+C:\Users\sergi\source\repos\2021-1-Topicos\Topicos.NorthWnd.Model\obj\Debug\netcoreapp3.1\Topicos.NorthWnd.Model.genruntimeconfig.cache
