@@ -19,20 +19,6 @@ namespace Topicos.NorthWnd.BL.Logica.Servicio
         {
             _elContexto = elContexto;
         }
-
-        public int Add(Product elProducto)
-        {
-            var laAccion = new Logica.Accion.Product(_elContexto);
-            return laAccion.Add(elProducto);
-        }
-
-        public IList<Model.Models.Product> QryAllProducts()
-        {
-            var laAccion = new Logica.Accion.Product(_elContexto);
-            var elResultado = laAccion.QryAllProducts();
-            return elResultado;
-        }
-
         public Product QryPorId(int elIdDeProducto)
         {
             var laAccion = new Logica.Accion.Product(_elContexto);
@@ -54,10 +40,16 @@ namespace Topicos.NorthWnd.BL.Logica.Servicio
             return elResultado;
         }
 
-        public bool ActualizarTodoElProducto(int id, Product elProducto)
+        public IList<Product> QryPorNombreCategoriaAproximado(string elNombreDelProducto)
         {
             var laAccion = new Logica.Accion.Product(_elContexto);
-            var elResultado = laAccion.ActualizarTodoElProducto(id, elProducto);
+            var elResultado = laAccion.QryPorNombreCategoriaAproximado(elNombreDelProducto);
+            return elResultado;
+        }
+        public IList<Product> QryPorNombreAproximadoConIntervalo(string elNombreDelProducto)
+        {
+            var laAccion = new Logica.Accion.Product(_elContexto);
+            var elResultado = laAccion.QryPorNombreAproximadoConIntervalo(elNombreDelProducto);
             return elResultado;
         }
     }

@@ -20,13 +20,6 @@ namespace Topicos.NorthWnd.BL.Logica.Repositorio
             _elContexto = elContexto;
         }
 
-        public IList<Model.Models.Product> QryAllProducts ()
-        {
-            var laConsulta = _elContexto.Products.ToList();
-            return laConsulta;
-        }
-
-
         public Model.Models.Product QryPorId(int elIdDeProducto)
         {
             var laConsulta = _elContexto.Products.Include(p => p.Category).Include(p=> p.Supplier).Where(p=> p.ProductId == elIdDeProducto).ToList().FirstOrDefault();
@@ -42,13 +35,6 @@ namespace Topicos.NorthWnd.BL.Logica.Repositorio
             return elResultado;
         }
 
-        public int Add(Model.Models.Product elProducto)
-        {
-            _elContexto.Products.Add(elProducto);
-            _elContexto.SaveChanges();
-            return elProducto.ProductId;
-        }
-
         public IList<Model.Models.Product> QryPorNombreProveedorAproximado(string elNombreDelProveedor)
         {
             // IQueryable
@@ -56,30 +42,6 @@ namespace Topicos.NorthWnd.BL.Logica.Repositorio
             laConsulta = laConsulta.OrderByDescending(p => p.ProductName);
             var elResultado = laConsulta.ToList();
             return elResultado;
-        }
-
-        public bool ActualizarTodoElProducto(int id, Model.Models.Product elProducto)
-        {
-            var elProductoEnBd = _elContexto.Products.Include(p => p.Category).Include(p => p.Supplier).Where(p => p.ProductId == id).ToList().FirstOrDefault();
-            if (elProductoEnBd != null)
-            {
-                elProductoEnBd.ProductName = elProducto.ProductName;
-                elProductoEnBd.SupplierId = elProducto.SupplierId;
-                elProductoEnBd.CategoryId = elProducto.CategoryId;
-                elProductoEnBd.QuantityPerUnit = elProducto.QuantityPerUnit;
-                elProductoEnBd.UnitPrice = elProducto.UnitPrice;
-                elProductoEnBd.UnitsInStock = elProducto.UnitsInStock;
-                elProductoEnBd.UnitsOnOrder = elProducto.UnitsOnOrder;
-                elProductoEnBd.ReorderLevel = elProducto.ReorderLevel;
-                elProductoEnBd.Discontinued = elProducto.Discontinued;
-                _elContexto.Products.Update(elProductoEnBd);
-                _elContexto.SaveChanges();
-                return true;
-            }
-            else
-            {
-                return false;
-            }
         }
 
         public IList<Model.Models.Product> QryPorRangoDePrecio(decimal limiteInferior, decimal limiteSuperior)
@@ -90,5 +52,19 @@ namespace Topicos.NorthWnd.BL.Logica.Repositorio
             var elResultado = laConsulta.ToList();
             return elResultado;
         }
+        public IList<Model.Models.Product> QryPorCategoriaAproximado(string elNombreDelProducto)
+        {
+            // IQueryable
+            var laConsulta = _elContexto.Products.Include(p => p.Category).Where(p => p.Category.CategoryName.Contains(elNombreDelProducto));
+            laConsulta = laConsulta.OrderByDescending(p => p.ProductName);
+            var elResultado = laConsulta.ToList();
+            return elResultado;
+        }
+        public IList<Model.Models.Product> QryPorNombreAproximadoConIntervalo(string elNombreDelProducto)
+        {
+            // IQueryable
+     
+        }
+
     }
 }

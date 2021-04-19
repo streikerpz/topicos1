@@ -14,13 +14,6 @@ namespace Topicos.NorthWnd.BL.Logica.Accion
 
         }
 
-        public IList<Model.Models.Product> QryAllProducts()
-        {
-            var elRepositorio = new Logica.Repositorio.Product(_elContexto);
-            var elResultado = elRepositorio.QryAllProducts();
-            return elResultado;
-        }
-
         public Product(NorthWindContext elContexto)
         {
             _elContexto = elContexto;
@@ -31,12 +24,6 @@ namespace Topicos.NorthWnd.BL.Logica.Accion
             var elRepositorio = new Logica.Repositorio.Product(_elContexto);
             var elResultado = elRepositorio.QryPorId(elIdDeProducto);
             return elResultado;
-        }
-
-        public int Add(Model.Models.Product elProducto)
-        {
-            var elRepositorio = new Logica.Repositorio.Product(_elContexto);
-            return elRepositorio.Add(elProducto);
         }
 
         public IList<Model.Models.Product> QryPorNombreAproximado(string elNombreDelProducto)
@@ -52,11 +39,16 @@ namespace Topicos.NorthWnd.BL.Logica.Accion
             var elResultado = elRepositorio.QryPorRangoDePrecio(limiteInferior, limiteSuperior);
             return elResultado;
         }
-
-        public bool ActualizarTodoElProducto(int id, Model.Models.Product elProducto)
+        public IList<Model.Models.Product> QryPorNombreCategoriaAproximado (string elNombreDelProducto)
         {
             var elRepositorio = new Logica.Repositorio.Product(_elContexto);
-            var elResultado = elRepositorio.ActualizarTodoElProducto(id, elProducto);
+            var elResultado = elRepositorio.QryPorCategoriaAproximado(elNombreDelProducto);
+            return elResultado;
+        }
+        public IList<Model.Models.Product> QryPorNombreAproximadoConIntervalo(string elNombreDelProducto)
+        {
+            var elRepositorio = new Logica.Repositorio.Product(_elContexto);
+            var elResultado = elRepositorio.QryPorNombreAproximadoConIntervalo(elNombreDelProducto);
             return elResultado;
         }
     }
